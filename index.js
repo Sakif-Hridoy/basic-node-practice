@@ -11,6 +11,7 @@ app.get('/',(req,res)=>{
     }
     res.send(fruit)
 });
+
 app.get('/fruits/banana',(req,res)=>{
     res.send({fruit:'banana',quantity:1000,price:10000})
 });
@@ -20,7 +21,8 @@ app.get('/users/:id',(req,res)=>{
     console.log(req.params.id)
     const id = req.params.id;
     const name = users[id];
-    res.send({id,name});
+    res.send({name,id});
+    
 })
 
 app.post('/addUser'),(req,res)=>{
