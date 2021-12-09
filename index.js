@@ -3,7 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
 app.use(cors());
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 const users = ["Sakif","Nasrin","Moin","Zaara","Marshmello"]
 app.get('/',(req,res)=>{
     const fruit = {
@@ -28,13 +28,14 @@ app.get('/users/:id',(req,res)=>{
     
 })
 
-app.post('/addUser'),(req,res)=>{
-    console.log(req.body);
-}
+
 // POST
 
 app.post('/addUser',(req,res)=>{
-    console.log(req.body);
+    // save to DB
+    const user = req.body;
+    user.id = 55;
+    res.send(user);
 
 })
 
